@@ -1,0 +1,139 @@
+* {
+  margin: 0; /* Remove a margem padrão de todos os elementos */
+  padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* Inclui a margem e o preenchimento no tamanho total dos elementos */
+}
+
+.container {
+  width: 100%; /* Define a largura como 100% do elemento pai */
+  min-height: 100vh; /* Define a altura mínima como 100% da altura da janela */
+  background: linear-gradient(
+    135deg,
+    #153677,
+    #4e085f
+  ); /* Adiciona um fundo degradê */
+  padding: 10px; /* Adiciona um preenchimento de 10px */
+}
+
+.app-tarefas {
+  width: 100%; /* Define a largura como 100% do elemento pai */
+  max-width: 540px; /* Define a largura máxima como 540px */
+  background: #fff; /* Define a cor de fundo como branca */
+  margin: 100px auto 20px; /* Adiciona margem superior de 100px, automática nas laterais e inferior de 20px */
+  padding: 40px 30px 70px; /* Adiciona preenchimento interno */
+  border-radius: 10px; /* Arredonda os cantos do elemento */
+}
+
+.app-tarefas h2 {
+  color: #002765; /* Define a cor do texto */
+  display: flex; /* Usa o layout flexível */
+  align-items: center; /* Alinha os itens no centro verticalmente */
+  margin-bottom: 20px; /* Adiciona margem inferior de 20px */
+}
+
+.app-tarefas h2 img {
+  width: 30px; /* Define a largura da imagem */
+  margin-left: 10px; /* Adiciona margem à esquerda da imagem */
+  margin-bottom: 9px;
+}
+
+.linha {
+  display: flex; /* Usa o layout flexível */
+  align-items: center; /* Alinha os itens no centro verticalmente */
+  justify-content: space-between; /* Espaça os itens igualmente */
+  background: #edeef0; /* Define a cor de fundo */
+  border-radius: 30px; /* Arredonda os cantos do elemento */
+  padding-left: 20px; /* Adiciona preenchimento à esquerda */
+  margin-bottom: 25px; /* Adiciona margem inferior de 25px */
+}
+
+input {
+  flex: 1; /* Faz o input crescer para preencher o espaço disponível */
+  border: none; /* Remove a borda do input */
+  outline: none; /* Remove a linha de contorno */
+  background: transparent; /* Define o fundo como transparente */
+  padding: 10px; /* Adiciona preenchimento interno */
+}
+
+button {
+  border: none; /* Remove a borda do botão */
+  outline: none; /* Remove a linha de contorno */
+  padding: 16px 50px; /* Adiciona preenchimento interno */
+  background: #ff5945; /* Define a cor de fundo */
+  color: #fff; /* Define a cor do texto */
+  font-size: 16px; /* Define o tamanho da fonte */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  border-radius: 40px; /* Arredonda os cantos do botão */
+}
+
+ul li {
+  list-style: none; /* Remove os marcadores de lista */
+  font-size: 17px; /* Define o tamanho da fonte */
+  padding: 12px 8px; /* Adiciona preenchimento interno */
+  user-select: none; /* Impede a seleção do texto */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  position: relative; /* Define a posição como relativa */
+  display: flex; /* Usa o layout flexível */
+  align-items: center; /* Alinha os itens no centro verticalmente */
+}
+
+ul li::before {
+  content: ""; /* Insere um conteúdo vazio antes do elemento */
+  display: inline-block; /* Exibe o conteúdo como um bloco em linha */
+  height: 28px; /* Define a altura */
+  width: 28px; /* Define a largura */
+  border-radius: 50%; /* Arredonda os cantos */
+  background-image: url(assets/unchecked.png); /* Define a imagem de fundo */
+  background-size: cover; /* Ajusta o tamanho da imagem de fundo para cobrir o elemento */
+  background-position: center; /* Centraliza a imagem de fundo */
+  margin-right: 10px; /* Adiciona margem à direita */
+}
+
+ul li.marcado {
+  color: #555; /* Define a cor do texto */
+  text-decoration: line-through; /* Risca o texto */
+}
+
+ul li.marcado::before {
+  background-image: url(assets/checked.png); /* Define a imagem de fundo para a tarefa marcada */
+}
+
+ul li span {
+  position: absolute; /* Define a posição do elemento como absoluta em relação ao pai */
+  right: 0; /* Alinha o elemento à direita do seu pai */
+  top: 50%; /* Centraliza verticalmente em relação ao seu pai */
+  transform: translateY(
+    -50%
+  ); /* Ajusta a posição verticalmente para centralizar o elemento */
+  height: 40px; /* Define a altura do elemento */
+  width: 40px; /* Define a largura do elemento */
+  font-size: 22px; /* Define o tamanho da fonte */
+  color: #555; /* Define a cor do texto */
+  line-height: 40px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+  text-align: center; /* Centraliza o texto no meio do elemento */
+  border-radius: 50%; /* Garante que o elemento tenha uma forma circular */
+  background: #fff; /* Define a cor de fundo como branca */
+}
+
+ul li span:hover {
+  background: #edeef0; /* Muda a cor de fundo ao passar por cima */
+}
+
+/* Estilo para o popup de mensagem */
+.popup {
+  visibility: hidden; /* Define a visibilidade como oculta */
+  min-width: 250px; /* Define a largura mínima */
+  background-color: #555; /* Define a cor de fundo */
+  color: #fff; /* Define a cor do texto */
+  text-align: center; /* Centraliza o texto */
+  border-radius: 20px; /* Arredonda os cantos */
+  padding: 16px; /* Adiciona preenchimento interno */
+  position: fixed; /* Define a posição como fixa */
+  z-index: 1; /* Define a ordem no empilhamento */
+  bottom: 30px; /* Posiciona 30px acima do fundo */
+  right: 30px; /* Posiciona 30px à direita */
+}
+
+.popup.mostrar {
+  visibility: visible; /* Torna o popup visível */
+}
